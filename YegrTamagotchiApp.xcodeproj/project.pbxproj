@@ -12,6 +12,8 @@
 		689BAD742C1308BE00BCD61F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD732C1308BE00BCD61F /* ViewController.swift */; };
 		689BAD792C1308BF00BCD61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 689BAD782C1308BF00BCD61F /* Assets.xcassets */; };
 		689BAD7C2C1308BF00BCD61F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 689BAD7B2C1308BF00BCD61F /* Base */; };
+		689BAD842C13098A00BCD61F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 689BAD832C13098A00BCD61F /* .gitignore */; };
+		689BAD862C1309B000BCD61F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD852C1309B000BCD61F /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		689BAD782C1308BF00BCD61F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		689BAD7B2C1308BF00BCD61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		689BAD7D2C1308BF00BCD61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		689BAD832C13098A00BCD61F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		689BAD852C1309B000BCD61F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		689BAD632C1308BE00BCD61F = {
 			isa = PBXGroup;
 			children = (
+				689BAD832C13098A00BCD61F /* .gitignore */,
 				689BAD6E2C1308BE00BCD61F /* YegrTamagotchiApp */,
 				689BAD6D2C1308BE00BCD61F /* Products */,
 			);
@@ -60,6 +65,7 @@
 				689BAD782C1308BF00BCD61F /* Assets.xcassets */,
 				689BAD7A2C1308BF00BCD61F /* LaunchScreen.storyboard */,
 				689BAD7D2C1308BF00BCD61F /* Info.plist */,
+				689BAD852C1309B000BCD61F /* APIKey.swift */,
 			);
 			path = YegrTamagotchiApp;
 			sourceTree = "<group>";
@@ -123,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				689BAD792C1308BF00BCD61F /* Assets.xcassets in Resources */,
+				689BAD842C13098A00BCD61F /* .gitignore in Resources */,
 				689BAD7C2C1308BF00BCD61F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +143,7 @@
 			files = (
 				689BAD742C1308BE00BCD61F /* ViewController.swift in Sources */,
 				689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */,
+				689BAD862C1309B000BCD61F /* APIKey.swift in Sources */,
 				689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
