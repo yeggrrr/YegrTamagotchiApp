@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD6F2C1308BE00BCD61F /* AppDelegate.swift */; };
 		689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD712C1308BE00BCD61F /* SceneDelegate.swift */; };
-		689BAD742C1308BE00BCD61F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD732C1308BE00BCD61F /* ViewController.swift */; };
 		689BAD792C1308BF00BCD61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 689BAD782C1308BF00BCD61F /* Assets.xcassets */; };
 		689BAD7C2C1308BF00BCD61F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 689BAD7B2C1308BF00BCD61F /* Base */; };
 		689BAD842C13098A00BCD61F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 689BAD832C13098A00BCD61F /* .gitignore */; };
@@ -17,18 +16,21 @@
 		689BAD892C1309E000BCD61F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 689BAD882C1309E000BCD61F /* SnapKit */; };
 		689BAD8C2C1309ED00BCD61F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 689BAD8B2C1309ED00BCD61F /* Alamofire */; };
 		689BAD8F2C1309F500BCD61F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 689BAD8E2C1309F500BCD61F /* Kingfisher */; };
+		689BAD912C130A8D00BCD61F /* SelectTamagochiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD902C130A8D00BCD61F /* SelectTamagochiViewController.swift */; };
+		689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		689BAD6C2C1308BE00BCD61F /* YegrTamagotchiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YegrTamagotchiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		689BAD6F2C1308BE00BCD61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		689BAD712C1308BE00BCD61F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		689BAD732C1308BE00BCD61F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		689BAD782C1308BF00BCD61F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		689BAD7B2C1308BF00BCD61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		689BAD7D2C1308BF00BCD61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689BAD832C13098A00BCD61F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		689BAD852C1309B000BCD61F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		689BAD902C130A8D00BCD61F /* SelectTamagochiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagochiViewController.swift; sourceTree = "<group>"; };
+		689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResuableProtocol+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +69,30 @@
 			children = (
 				689BAD6F2C1308BE00BCD61F /* AppDelegate.swift */,
 				689BAD712C1308BE00BCD61F /* SceneDelegate.swift */,
-				689BAD732C1308BE00BCD61F /* ViewController.swift */,
 				689BAD782C1308BF00BCD61F /* Assets.xcassets */,
 				689BAD7A2C1308BF00BCD61F /* LaunchScreen.storyboard */,
+				689BAD922C130AAF00BCD61F /* SelectTamagotchi */,
+				689BAD932C130AD500BCD61F /* Extension */,
 				689BAD7D2C1308BF00BCD61F /* Info.plist */,
 				689BAD852C1309B000BCD61F /* APIKey.swift */,
 			);
 			path = YegrTamagotchiApp;
+			sourceTree = "<group>";
+		};
+		689BAD922C130AAF00BCD61F /* SelectTamagotchi */ = {
+			isa = PBXGroup;
+			children = (
+				689BAD902C130A8D00BCD61F /* SelectTamagochiViewController.swift */,
+			);
+			path = SelectTamagotchi;
+			sourceTree = "<group>";
+		};
+		689BAD932C130AD500BCD61F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				689BAD742C1308BE00BCD61F /* ViewController.swift in Sources */,
+				689BAD912C130A8D00BCD61F /* SelectTamagochiViewController.swift in Sources */,
+				689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */,
 				689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */,
 				689BAD862C1309B000BCD61F /* APIKey.swift in Sources */,
 				689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */,
