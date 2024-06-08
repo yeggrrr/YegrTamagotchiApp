@@ -26,6 +26,9 @@
 		689BADA92C14816300BCD61F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADA82C14816300BCD61F /* UIColor+.swift */; };
 		689BADAC2C14875600BCD61F /* MainTamagotchiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADAB2C14875600BCD61F /* MainTamagotchiViewController.swift */; };
 		689BADAE2C148B3F00BCD61F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADAD2C148B3F00BCD61F /* MainView.swift */; };
+		689BADB32C14A91B00BCD61F /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADB22C14A91B00BCD61F /* UILabel+.swift */; };
+		689BADB52C14AA8200BCD61F /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADB42C14AA8200BCD61F /* UIStackView+.swift */; };
+		689BADB72C14AAF100BCD61F /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADB62C14AAF100BCD61F /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		689BADA82C14816300BCD61F /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		689BADAB2C14875600BCD61F /* MainTamagotchiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTamagotchiViewController.swift; sourceTree = "<group>"; };
 		689BADAD2C148B3F00BCD61F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		689BADB22C14A91B00BCD61F /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		689BADB42C14AA8200BCD61F /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		689BADB62C14AAF100BCD61F /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 				689BAD922C130AAF00BCD61F /* SelectTamagotchi */,
 				689BADA32C14623B00BCD61F /* DetailTamagotchi */,
 				689BADAA2C14871F00BCD61F /* MainTamagotchi */,
+				689BADAF2C14995300BCD61F /* Model */,
 				689BAD932C130AD500BCD61F /* Extension */,
 				689BAD7D2C1308BF00BCD61F /* Info.plist */,
 				689BAD852C1309B000BCD61F /* APIKey.swift */,
@@ -100,7 +107,6 @@
 		689BAD922C130AAF00BCD61F /* SelectTamagotchi */ = {
 			isa = PBXGroup;
 			children = (
-				689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */,
 				689BAD962C1429FF00BCD61F /* SelectTamagochiTableViewCell.swift */,
 				689BAD982C142A6400BCD61F /* SelectTamagotchiView.swift */,
 				689BAD902C130A8D00BCD61F /* SelectTamagochiViewController.swift */,
@@ -114,6 +120,9 @@
 				689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */,
 				689BADA62C14803D00BCD61F /* UIButton+.swift */,
 				689BADA82C14816300BCD61F /* UIColor+.swift */,
+				689BADB22C14A91B00BCD61F /* UILabel+.swift */,
+				689BADB42C14AA8200BCD61F /* UIStackView+.swift */,
+				689BADB62C14AAF100BCD61F /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -133,6 +142,14 @@
 				689BADAB2C14875600BCD61F /* MainTamagotchiViewController.swift */,
 			);
 			path = MainTamagotchi;
+			sourceTree = "<group>";
+		};
+		689BADAF2C14995300BCD61F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,15 +237,18 @@
 				689BADAE2C148B3F00BCD61F /* MainView.swift in Sources */,
 				689BAD912C130A8D00BCD61F /* SelectTamagochiViewController.swift in Sources */,
 				689BAD9B2C143E2300BCD61F /* TamagotchiData.swift in Sources */,
+				689BADB32C14A91B00BCD61F /* UILabel+.swift in Sources */,
 				689BAD972C1429FF00BCD61F /* SelectTamagochiTableViewCell.swift in Sources */,
 				689BADA92C14816300BCD61F /* UIColor+.swift in Sources */,
 				689BADA52C14627200BCD61F /* DetailTamagotchiViewController.swift in Sources */,
 				689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */,
 				689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */,
+				689BADB52C14AA8200BCD61F /* UIStackView+.swift in Sources */,
 				689BAD862C1309B000BCD61F /* APIKey.swift in Sources */,
 				689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */,
 				689BADAC2C14875600BCD61F /* MainTamagotchiViewController.swift in Sources */,
 				689BADA72C14803D00BCD61F /* UIButton+.swift in Sources */,
+				689BADB72C14AAF100BCD61F /* UITextField+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
