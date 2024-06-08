@@ -10,7 +10,7 @@ import UIKit
 extension UILabel {
     func setMainLabel(textContents: String, fontSizeStyle: UIFont) {
         text = textContents
-        textColor = UIColor.fontBorderColor()
+        textColor = .fontBorderColor
         textAlignment = .center
         font = fontSizeStyle
     }

@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-class SelectTamagotchiView: UIView {
-    let selectTamagotchiTableView = UITableView()
+class SelectView: UIView {
+    let selectTableView = UITableView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,20 +28,20 @@ class SelectTamagotchiView: UIView {
     }
     
     func configureHierarchy() {
-        addSubview(selectTamagotchiTableView)
+        addSubview(selectTableView)
     }
     
     func configureLayout() {
         let safeArea = safeAreaLayoutGuide
         
-        selectTamagotchiTableView.snp.makeConstraints {
+        selectTableView.snp.makeConstraints {
             $0.edges.equalTo(safeArea)
         }
     }
     
     func configureUI() {
-        selectTamagotchiTableView.backgroundColor = UIColor.primaryBackgroundColor()
-        selectTamagotchiTableView.separatorStyle = .none
+        selectTableView.backgroundColor = .primaryBackgroundColor
+        selectTableView.separatorStyle = .none
         
     }
 }

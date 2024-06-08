@@ -8,14 +8,14 @@
 import UIKit
 import SnapKit
 
-class DetailTamagotchiViewController: UIViewController {
+class DetailViewController: UIViewController {
     let popUpView = UIView()
     
     let tamagotchiImageView = UIImageView()
     let tamagotchiNameView = UIView()
     let tamagotchiNameLabel = UILabel()
     
-    let devideLineView = UIView()
+    let dividerView = UIView()
     
     let introductionLabel = UILabel()
     
@@ -23,7 +23,7 @@ class DetailTamagotchiViewController: UIViewController {
     let cancelButton = UIButton(type: .system)
     let startButton = UIButton(type: .system)
     
-    var detailData: SelectTamagotchi?
+    var detailData: RaisingTamagotchi?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +41,7 @@ class DetailTamagotchiViewController: UIViewController {
         popUpView.addSubview(tamagotchiNameView)
         tamagotchiNameView.addSubview(tamagotchiNameLabel)
         
-        popUpView.addSubview(devideLineView)
-        
+        popUpView.addSubview(dividerView)
         popUpView.addSubview(introductionLabel)
         
         popUpView.addSubview(buttonStackView)
@@ -76,7 +75,7 @@ class DetailTamagotchiViewController: UIViewController {
             $0.height.equalTo(20)
         }
         
-        devideLineView.snp.makeConstraints {
+        dividerView.snp.makeConstraints {
             $0.top.equalTo(tamagotchiNameView.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(popUpView).inset(40)
             $0.height.equalTo(1)
@@ -89,7 +88,7 @@ class DetailTamagotchiViewController: UIViewController {
         }
         
         introductionLabel.snp.makeConstraints {
-            $0.top.equalTo(devideLineView.snp.bottom).offset(10)
+            $0.top.equalTo(dividerView.snp.bottom).offset(10)
             $0.horizontalEdges.equalTo(popUpView)
             $0.bottom.equalTo(buttonStackView.snp.top).offset(-10)
         }
@@ -106,22 +105,22 @@ class DetailTamagotchiViewController: UIViewController {
     }
     
     func configureUI() {
-        popUpView.backgroundColor = UIColor.primaryBackgroundColor()
+        popUpView.backgroundColor = .primaryBackgroundColor
         popUpView.layer.cornerRadius = 10
         
-        guard let image = detailData?.image else { return }
+        guard let image = detailData?.info.image else { return }
         tamagotchiImageView.layer.cornerRadius = 60
-        tamagotchiImageView.image = UIImage(named: image)
+        tamagotchiImageView.image = UIImage(named: image.rawValue)
         
         tamagotchiNameView.layer.borderWidth = 1
-        tamagotchiNameView.layer.borderColor = UIColor.fontBorderColor().cgColor
+        tamagotchiNameView.layer.borderColor = UIColor.fontBorderColor.cgColor
         
-        tamagotchiNameLabel.text = detailData?.name
+        tamagotchiNameLabel.text = detailData?.info.name.rawValue
         tamagotchiNameLabel.font = .systemFont(ofSize: 14)
         
-        devideLineView.backgroundColor = .lightGray
+        dividerView.backgroundColor = .lightGray
         
-        introductionLabel.text = detailData?.introduction
+        introductionLabel.text = detailData?.info.introduction.rawValue
         introductionLabel.textAlignment = .center
         introductionLabel.numberOfLines = 0
         introductionLabel.font = .systemFont(ofSize: 14)
@@ -132,8 +131,8 @@ class DetailTamagotchiViewController: UIViewController {
         buttonStackView.distribution = .fillEqually
         buttonStackView.backgroundColor = .systemGray4
         
-        cancelButton.setDetailUI(datilBackgroundColor: UIColor.primaryBackgroundColor(), buttonTitle: "취소", buttonTitleColor: .black)
-        startButton.setDetailUI(datilBackgroundColor: UIColor.primaryBackgroundColor(), buttonTitle: "시작하기", buttonTitleColor: .black)
+        cancelButton.setDetailUI(detailBackgroundColor: .primaryBackgroundColor, buttonTitle: "취소", buttonTitleColor: .black)
+        startButton.setDetailUI(detailBackgroundColor: .primaryBackgroundColor, buttonTitle: "시작하기", buttonTitleColor: .black)
     }
     
     func configureAction() {
@@ -146,7 +145,8 @@ class DetailTamagotchiViewController: UIViewController {
     }
     
     @objc func startButtonClicked() {
-        let mainVC = MainTamagotchiViewController()
+        let mainVC = MainViewController()
+        mainVC.mainData = detailData
         let mainNav = UINavigationController(rootViewController: mainVC)
         mainNav.modalPresentationStyle = .fullScreen
         present(mainNav, animated: true)

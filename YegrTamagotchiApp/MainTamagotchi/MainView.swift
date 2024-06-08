@@ -18,15 +18,15 @@ class MainView: UIView {
     
     let currentStatusLabel = UILabel()
     
-    let giveRiceStackView = UIStackView()
-    let giveRiceTextField = UITextField()
-    let giveRiceButton = UIButton()
-    let giveRiceTFUnderLineView = UIView()
+    let feedStackView = UIStackView()
+    let feedTextField = UITextField()
+    let feedButton = UIButton()
+    let feedTFUnderLineView = UIView()
     
-    let giveWaterStackView = UIStackView()
-    let giveWaterTextField = UITextField()
-    let giveWaterButton = UIButton()
-    let giveWaterTFUnderLineView = UIView()
+    let waterStackView = UIStackView()
+    let waterTextField = UITextField()
+    let waterButton = UIButton()
+    let waterTFUnderLineView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,15 +53,15 @@ class MainView: UIView {
         tamagotchiNameView.addSubview(tamagotchiNameLabel)
         addSubview(currentStatusLabel)
         
-        addSubview(giveRiceStackView)
-        giveRiceStackView.addArrangedSubview(giveRiceTextField)
-        giveRiceStackView.addArrangedSubview(giveRiceButton)
-        addSubview(giveRiceTFUnderLineView)
+        addSubview(feedStackView)
+        feedStackView.addArrangedSubview(feedTextField)
+        feedStackView.addArrangedSubview(feedButton)
+        addSubview(feedTFUnderLineView)
         
-        addSubview(giveWaterStackView)
-        giveWaterStackView.addArrangedSubview(giveWaterTextField)
-        giveWaterStackView.addArrangedSubview(giveWaterButton)
-        addSubview(giveWaterTFUnderLineView)
+        addSubview(waterStackView)
+        waterStackView.addArrangedSubview(waterTextField)
+        waterStackView.addArrangedSubview(waterButton)
+        addSubview(waterTFUnderLineView)
     }
     
     func configureLayout() {
@@ -99,53 +99,53 @@ class MainView: UIView {
             $0.centerX.equalTo(safeArea)
         }
         
-        giveRiceStackView.snp.makeConstraints {
+        feedStackView.snp.makeConstraints {
             $0.top.equalTo(currentStatusLabel.snp.bottom).offset(30)
             $0.centerX.equalTo(safeArea)
         }
         
-        giveRiceTextField.snp.makeConstraints {
+        feedTextField.snp.makeConstraints {
             $0.width.equalTo(180)
             $0.height.equalTo(40)
         }
         
-        giveRiceButton.snp.makeConstraints {
+        feedButton.snp.makeConstraints {
             $0.width.equalTo(80)
             $0.height.equalTo(40)
         }
         
-        giveRiceTFUnderLineView.snp.makeConstraints {
-            $0.top.equalTo(giveRiceStackView.snp.bottom).inset(2)
-            $0.leading.equalTo(giveRiceStackView.snp.leading)
-            $0.width.equalTo(giveRiceTextField)
+        feedTFUnderLineView.snp.makeConstraints {
+            $0.top.equalTo(feedStackView.snp.bottom).inset(2)
+            $0.leading.equalTo(feedStackView.snp.leading)
+            $0.width.equalTo(feedTextField)
             $0.height.equalTo(1)
         }
         
-        giveWaterStackView.snp.makeConstraints {
-            $0.top.equalTo(giveRiceStackView.snp.bottom).offset(20)
+        waterStackView.snp.makeConstraints {
+            $0.top.equalTo(feedStackView.snp.bottom).offset(20)
             $0.centerX.equalTo(safeArea)
         }
         
-        giveWaterTextField.snp.makeConstraints {
+        waterTextField.snp.makeConstraints {
             $0.width.equalTo(180)
             $0.height.equalTo(40)
         }
         
-        giveWaterButton.snp.makeConstraints {
+        waterButton.snp.makeConstraints {
             $0.width.equalTo(80)
             $0.height.equalTo(40)
         }
         
-        giveWaterTFUnderLineView.snp.makeConstraints {
-            $0.top.equalTo(giveWaterStackView.snp.bottom).inset(2)
-            $0.leading.equalTo(giveWaterStackView.snp.leading)
-            $0.width.equalTo(giveWaterTextField)
+        waterTFUnderLineView.snp.makeConstraints {
+            $0.top.equalTo(waterStackView.snp.bottom).inset(2)
+            $0.leading.equalTo(waterStackView.snp.leading)
+            $0.width.equalTo(waterTextField)
             $0.height.equalTo(1)
         }
     }
     
     func configureUI() {
-        backgroundColor = UIColor.primaryBackgroundColor()
+        backgroundColor = .primaryBackgroundColor
         storyImageView.image = UIImage(named: "bubble")
         
         storyLabel.setMainLabel(textContents: "복습 아직 안하셧다구요? \n지금 잠이 오세요? YEGR님??", fontSizeStyle: .systemFont(ofSize: 15))
@@ -156,22 +156,22 @@ class MainView: UIView {
         tamagotchiImageView.layer.cornerRadius = 110
         
         tamagotchiNameView.layer.borderWidth = 1
-        tamagotchiNameView.layer.borderColor = UIColor.fontBorderColor().cgColor
+        tamagotchiNameView.layer.borderColor = UIColor.fontBorderColor.cgColor
         
         tamagotchiNameLabel.setMainLabel(textContents: "방실방실 다마고치", fontSizeStyle: .systemFont(ofSize: 16))
         
         currentStatusLabel.setMainLabel(textContents: "LV1 ∙ 밥알 0개 ∙ 물방울 0개", fontSizeStyle: .boldSystemFont(ofSize: 14))
         
-        giveRiceStackView.setMainStackView()
-        giveWaterStackView.setMainStackView()
+        feedStackView.setMainStackView()
+        waterStackView.setMainStackView()
         
-        giveRiceTextField.setMainTextField(placeholderText: "밥주세용")
-        giveWaterTextField.setMainTextField(placeholderText: "물주세용")
+        feedTextField.setMainTextField(placeholderText: "밥주세용")
+        waterTextField.setMainTextField(placeholderText: "물주세용")
         
-        giveRiceButton.setMainUI(imageSystemName: "drop.circle", buttonTitle: " 밥먹기")
-        giveRiceTFUnderLineView.backgroundColor = UIColor.fontBorderColor()
+        feedButton.setMainUI(imageSystemName: "drop.circle", buttonTitle: " 밥먹기")
+        feedTFUnderLineView.backgroundColor = .fontBorderColor
         
-        giveWaterButton.setMainUI(imageSystemName: "leaf.circle", buttonTitle: " 물먹기")
-        giveWaterTFUnderLineView.backgroundColor = UIColor.fontBorderColor()
+        waterButton.setMainUI(imageSystemName: "leaf.circle", buttonTitle: " 물먹기")
+        waterTFUnderLineView.backgroundColor = .fontBorderColor
     }
 }

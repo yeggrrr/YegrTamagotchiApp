@@ -8,8 +8,9 @@
 import UIKit
 import SnapKit
 
-class MainTamagotchiViewController: UIViewController {
+class MainViewController: UIViewController {
     let mainView = MainView()
+    var mainData: RaisingTamagotchi?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,9 @@ class MainTamagotchiViewController: UIViewController {
     }
     
     func configureUI() {
-        view.backgroundColor = UIColor.primaryBackgroundColor()
+        view.backgroundColor = .primaryBackgroundColor
         view.addSubview(mainView)
+        
         let safeArea = view.safeAreaLayoutGuide
         mainView.snp.makeConstraints {
             $0.edges.equalTo(safeArea)
@@ -28,13 +30,17 @@ class MainTamagotchiViewController: UIViewController {
     }
 
     func configureNavigation() {
-        navigationController?.navigationBar.barTintColor = UIColor.primaryBackgroundColor()
+        navigationController?.navigationBar.barTintColor = .primaryBackgroundColor
         navigationController?.navigationBar.topItem?.title = "Yegr님의 다마고치"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.fontBorderColor()]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.fontBorderColor]
         
         let rightSettingButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         navigationController?.navigationBar.topItem?.rightBarButtonItem = rightSettingButton
-        navigationController?.navigationBar.topItem?.rightBarButtonItem?.tintColor = UIColor.fontBorderColor()
+        navigationController?.navigationBar.topItem?.rightBarButtonItem?.tintColor = .fontBorderColor
+    }
+    
+    func setData() {
+        
     }
     
     @objc func settingButtonClicked() {

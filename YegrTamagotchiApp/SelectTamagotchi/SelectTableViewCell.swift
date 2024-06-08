@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SelectTamagochiTableViewCell: UITableViewCell {
+class SelectTableViewCell: UITableViewCell {
     let cellBackgroundView = UIView()
     let tamagotchiImageView = UIImageView()
     let tamagotchiNameLabelView = UIView()
@@ -60,13 +60,13 @@ class SelectTamagochiTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-        cellBackgroundView.backgroundColor = UIColor.primaryBackgroundColor()
+        cellBackgroundView.backgroundColor = .primaryBackgroundColor
         
         tamagotchiImageView.layer.cornerRadius = 50
         
         tamagotchiNameLabelView.backgroundColor = .clear
         tamagotchiNameLabelView.layer.borderWidth = 1
-        tamagotchiNameLabelView.layer.borderColor = UIColor.fontBorderColor().cgColor
+        tamagotchiNameLabelView.layer.borderColor = UIColor.fontBorderColor.cgColor
         
         tamagotchiNameLabel.textColor = .label
         tamagotchiNameLabel.font = .systemFont(ofSize: 14)
