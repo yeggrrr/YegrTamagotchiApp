@@ -20,9 +20,8 @@ class SelectTamagochiViewController: UIViewController {
     }
     
     func configureNavigation() {
-        navigationItem.title = "다마고치 선택하기"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Copperplate", size: 20) ?? UIFont()]
-        self.navigationController?.navigationBar.backgroundColor = UIColor.primaryBackgroundColor()
+        navigationController?.navigationBar.topItem?.title = "다마고치 선택하기"
+        navigationController?.navigationBar.backgroundColor = UIColor.primaryBackgroundColor()
     }
     
     func selectTamagotchiViewUI() {

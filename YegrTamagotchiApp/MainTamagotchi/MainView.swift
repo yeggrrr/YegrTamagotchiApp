@@ -1,15 +1,13 @@
 //
-//  SelectTamagotchiView.swift
+//  MainView.swift
 //  YegrTamagotchiApp
 //
 //  Created by YJ on 6/8/24.
 //
 
 import UIKit
-import SnapKit
 
-class SelectTamagotchiView: UIView {
-    let selectTamagotchiTableView = UITableView()
+class MainView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,20 +26,14 @@ class SelectTamagotchiView: UIView {
     }
     
     func configureHierarchy() {
-        addSubview(selectTamagotchiTableView)
+        
     }
     
     func configureLayout() {
-        let safeArea = safeAreaLayoutGuide
         
-        selectTamagotchiTableView.snp.makeConstraints {
-            $0.edges.equalTo(safeArea)
-        }
     }
     
     func configureUI() {
-        selectTamagotchiTableView.backgroundColor = UIColor.primaryBackgroundColor()
-        selectTamagotchiTableView.separatorStyle = .none
-        
+        backgroundColor = UIColor.primaryBackgroundColor()
     }
 }

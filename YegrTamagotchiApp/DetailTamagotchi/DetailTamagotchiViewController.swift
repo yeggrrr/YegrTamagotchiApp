@@ -32,6 +32,7 @@ class DetailTamagotchiViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
+        configureAction()
     }
     
     func configureHierarchy() {
@@ -133,5 +134,21 @@ class DetailTamagotchiViewController: UIViewController {
         
         cancelButton.setDetailUI(datilBackgroundColor: UIColor.primaryBackgroundColor(), buttonTitle: "취소", buttonTitleColor: .black)
         startButton.setDetailUI(datilBackgroundColor: UIColor.primaryBackgroundColor(), buttonTitle: "시작하기", buttonTitleColor: .black)
+    }
+    
+    func configureAction() {
+        cancelButton.addTarget(self, action: #selector(cancelButtonClicked), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(startButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func cancelButtonClicked() {
+        dismiss(animated: true)
+    }
+    
+    @objc func startButtonClicked() {
+        let mainVC = MainTamagotchiViewController()
+        let mainNav = UINavigationController(rootViewController: mainVC)
+        mainNav.modalPresentationStyle = .fullScreen
+        present(mainNav, animated: true)
     }
 }
