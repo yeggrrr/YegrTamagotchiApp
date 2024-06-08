@@ -148,7 +148,7 @@ class MainView: UIView {
         backgroundColor = .primaryBackgroundColor
         storyImageView.image = UIImage(named: "bubble")
         
-        storyLabel.setMainLabel(textContents: "복습 아직 안하셧다구요? \n지금 잠이 오세요? YEGR님??", fontSizeStyle: .systemFont(ofSize: 15))
+        storyLabel.setMainLabel(fontSizeStyle: .systemFont(ofSize: 15))
         storyLabel.numberOfLines = 0
         storyLabel.textAlignment = .center
         
@@ -158,9 +158,9 @@ class MainView: UIView {
         tamagotchiNameView.layer.borderWidth = 1
         tamagotchiNameView.layer.borderColor = UIColor.fontBorderColor.cgColor
         
-        tamagotchiNameLabel.setMainLabel(textContents: "방실방실 다마고치", fontSizeStyle: .systemFont(ofSize: 16))
+        tamagotchiNameLabel.setMainLabel(fontSizeStyle: .systemFont(ofSize: 16))
         
-        currentStatusLabel.setMainLabel(textContents: "LV1 ∙ 밥알 0개 ∙ 물방울 0개", fontSizeStyle: .boldSystemFont(ofSize: 14))
+        currentStatusLabel.setMainLabel(fontSizeStyle: .boldSystemFont(ofSize: 14))
         
         feedStackView.setMainStackView()
         waterStackView.setMainStackView()

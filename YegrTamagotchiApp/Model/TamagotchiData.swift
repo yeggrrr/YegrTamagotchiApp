@@ -42,7 +42,7 @@ struct RaisingTamagotchi {
 }
 
 struct UserInfo {
-    let nickname: String
+    static var nickname: String = "YEGR"
 }
 
 struct TamagotchiData {
