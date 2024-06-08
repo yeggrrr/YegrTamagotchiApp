@@ -22,10 +22,11 @@ class SelectTamagochiViewController: UIViewController {
     func configureNavigation() {
         navigationItem.title = "다마고치 선택하기"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Copperplate", size: 20) ?? UIFont()]
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
     }
     
     func selectTamagotchiViewUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         view.addSubview(selectTamagotchiView)
         selectTamagotchiView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
@@ -41,7 +42,7 @@ class SelectTamagochiViewController: UIViewController {
 
 extension SelectTamagochiViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        180
+        170
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +53,7 @@ extension SelectTamagochiViewController: UITableViewDelegate, UITableViewDataSou
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectTamagochiTableViewCell.id, for: indexPath) as?
                 SelectTamagochiTableViewCell else { return UITableViewCell() }
         cell.tamagotchiImageView.image = UIImage(named: TamagotchiData.selecttamagotchi[indexPath.row].image)
+        cell.tamagotchiNameLabel.text = TamagotchiData.selecttamagotchi[indexPath.row].name
         
         return cell
     }

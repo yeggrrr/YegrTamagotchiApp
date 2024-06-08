@@ -7,7 +7,14 @@
 
 import UIKit
 
-enum TamagotchiType: String {
+enum TamagotchiName: String {
+    case cactus = "따끔따끔 다마고치"
+    case sun = "방실방실 다마고치"
+    case star = "반짝반짝 다마고치"
+    case preparing = "준비중이에요"
+}
+
+enum TamagotchiImage: String {
     case cactus = "1-6"
     case sun = "2-6"
     case star = "3-6"
@@ -15,8 +22,8 @@ enum TamagotchiType: String {
 }
 
 struct SelectTamagotchi {
-    let name: TamagotchiType
-    let image: TamagotchiType.RawValue
+    let name: TamagotchiName.RawValue
+    let image: TamagotchiImage.RawValue
 }
 
 struct TamagotchiDetail {
@@ -38,25 +45,25 @@ struct UserInfo {
 
 struct TamagotchiData {
     static let selecttamagotchi: [SelectTamagotchi] = [
-        SelectTamagotchi(name: .cactus, image: TamagotchiType.cactus.rawValue),
-        SelectTamagotchi(name: .sun, image: TamagotchiType.sun.rawValue),
-        SelectTamagotchi(name: .star, image: TamagotchiType.star.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue),
-        SelectTamagotchi(name: .preparing, image: TamagotchiType.preparing.rawValue)
+        SelectTamagotchi(name: TamagotchiName.cactus.rawValue, image: TamagotchiImage.cactus.rawValue),
+        SelectTamagotchi(name: TamagotchiName.sun.rawValue, image: TamagotchiImage.sun.rawValue),
+        SelectTamagotchi(name: TamagotchiName.star.rawValue, image: TamagotchiImage.star.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue),
+        SelectTamagotchi(name: TamagotchiName.preparing.rawValue, image: TamagotchiImage.preparing.rawValue)
     ]
 }
