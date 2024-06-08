@@ -41,16 +41,18 @@ class SelectTamagochiViewController: UIViewController {
 
 extension SelectTamagochiViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        150
+        180
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return TamagotchiData.selecttamagotchi.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectTamagochiTableViewCell.id, for: indexPath) as?
                 SelectTamagochiTableViewCell else { return UITableViewCell() }
+        cell.tamagotchiImageView.image = UIImage(named: TamagotchiData.selecttamagotchi[indexPath.row].image)
+        
         return cell
     }
 }

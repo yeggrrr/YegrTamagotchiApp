@@ -20,6 +20,7 @@
 		689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */; };
 		689BAD972C1429FF00BCD61F /* SelectTamagochiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD962C1429FF00BCD61F /* SelectTamagochiTableViewCell.swift */; };
 		689BAD992C142A6400BCD61F /* SelectTamagotchiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD982C142A6400BCD61F /* SelectTamagotchiView.swift */; };
+		689BAD9B2C143E2300BCD61F /* TamagotchiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResuableProtocol+.swift"; sourceTree = "<group>"; };
 		689BAD962C1429FF00BCD61F /* SelectTamagochiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagochiTableViewCell.swift; sourceTree = "<group>"; };
 		689BAD982C142A6400BCD61F /* SelectTamagotchiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagotchiView.swift; sourceTree = "<group>"; };
+		689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		689BAD922C130AAF00BCD61F /* SelectTamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */,
 				689BAD962C1429FF00BCD61F /* SelectTamagochiTableViewCell.swift */,
 				689BAD982C142A6400BCD61F /* SelectTamagotchiView.swift */,
 				689BAD902C130A8D00BCD61F /* SelectTamagochiViewController.swift */,
@@ -184,6 +187,7 @@
 			files = (
 				689BAD992C142A6400BCD61F /* SelectTamagotchiView.swift in Sources */,
 				689BAD912C130A8D00BCD61F /* SelectTamagochiViewController.swift in Sources */,
+				689BAD9B2C143E2300BCD61F /* TamagotchiData.swift in Sources */,
 				689BAD972C1429FF00BCD61F /* SelectTamagochiTableViewCell.swift in Sources */,
 				689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */,
 				689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */,

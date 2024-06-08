@@ -36,7 +36,7 @@ class SelectTamagochiTableViewCell: UITableViewCell {
         tamagotchiImageView.snp.makeConstraints {
             $0.top.equalTo(safeArea).offset(10)
             $0.centerX.equalTo(safeArea)
-            $0.height.width.equalTo(100)
+            $0.height.width.equalTo(120)
         }
         
         tamagotchiNameLabelView.snp.makeConstraints {
@@ -44,6 +44,7 @@ class SelectTamagochiTableViewCell: UITableViewCell {
             $0.centerX.equalTo(tamagotchiImageView.snp.centerX)
             $0.height.equalTo(tamagotchiNameLabel).offset(10)
             $0.width.equalTo(tamagotchiNameLabel).offset(10)
+            $0.bottom.greaterThanOrEqualTo(safeArea).offset(-10)
         }
         
         tamagotchiNameLabel.snp.makeConstraints {
@@ -53,6 +54,7 @@ class SelectTamagochiTableViewCell: UITableViewCell {
     
     func configureUI() {
         tamagotchiImageView.backgroundColor = .systemBrown
+        tamagotchiImageView.layer.cornerRadius = 60
         
         tamagotchiNameLabelView.backgroundColor = .clear
         tamagotchiNameLabelView.layer.borderWidth = 1
