@@ -22,6 +22,8 @@
 		689BAD992C142A6400BCD61F /* SelectTamagotchiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD982C142A6400BCD61F /* SelectTamagotchiView.swift */; };
 		689BAD9B2C143E2300BCD61F /* TamagotchiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */; };
 		689BADA52C14627200BCD61F /* DetailTamagotchiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADA42C14627200BCD61F /* DetailTamagotchiViewController.swift */; };
+		689BADA72C14803D00BCD61F /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADA62C14803D00BCD61F /* UIButton+.swift */; };
+		689BADA92C14816300BCD61F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADA82C14816300BCD61F /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		689BAD982C142A6400BCD61F /* SelectTamagotchiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagotchiView.swift; sourceTree = "<group>"; };
 		689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiData.swift; sourceTree = "<group>"; };
 		689BADA42C14627200BCD61F /* DetailTamagotchiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTamagotchiViewController.swift; sourceTree = "<group>"; };
+		689BADA62C14803D00BCD61F /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		689BADA82C14816300BCD61F /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */,
+				689BADA62C14803D00BCD61F /* UIButton+.swift */,
+				689BADA82C14816300BCD61F /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -200,11 +206,13 @@
 				689BAD912C130A8D00BCD61F /* SelectTamagochiViewController.swift in Sources */,
 				689BAD9B2C143E2300BCD61F /* TamagotchiData.swift in Sources */,
 				689BAD972C1429FF00BCD61F /* SelectTamagochiTableViewCell.swift in Sources */,
+				689BADA92C14816300BCD61F /* UIColor+.swift in Sources */,
 				689BADA52C14627200BCD61F /* DetailTamagotchiViewController.swift in Sources */,
 				689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */,
 				689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */,
 				689BAD862C1309B000BCD61F /* APIKey.swift in Sources */,
 				689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */,
+				689BADA72C14803D00BCD61F /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

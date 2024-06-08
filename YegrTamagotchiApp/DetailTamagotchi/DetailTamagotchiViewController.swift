@@ -20,8 +20,10 @@ class DetailTamagotchiViewController: UIViewController {
     let introductionLabel = UILabel()
     
     let buttonStackView = UIStackView()
-    let cancelButton = UIButton()
-    let startButton = UIButton()
+    let cancelButton = UIButton(type: .system)
+    let startButton = UIButton(type: .system)
+    
+    var detailData: SelectTamagotchi?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +75,7 @@ class DetailTamagotchiViewController: UIViewController {
         }
         
         devideLineView.snp.makeConstraints {
-            $0.top.equalTo(tamagotchiNameView.snp.bottom).offset(30)
+            $0.top.equalTo(tamagotchiNameView.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(popUpView).inset(40)
             $0.height.equalTo(1)
         }
@@ -106,18 +108,18 @@ class DetailTamagotchiViewController: UIViewController {
         popUpView.layer.cornerRadius = 10
         
         tamagotchiImageView.layer.cornerRadius = 60
-        tamagotchiImageView.backgroundColor = .systemGray6
+        guard let image = detailData?.image else { return }
+        tamagotchiImageView.image = UIImage(named: image)
         
-        tamagotchiNameView.backgroundColor = .systemGray5
         tamagotchiNameView.layer.borderWidth = 1
         tamagotchiNameView.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         
-        tamagotchiNameLabel.text = "다마고치"
+        tamagotchiNameLabel.text = detailData?.name
         tamagotchiNameLabel.font = .systemFont(ofSize: 14)
         
         devideLineView.backgroundColor = .lightGray
         
-        introductionLabel.text = "저는 방실장실 다마고치입니당 \n키는 100km 몸무게는 150톤이에용 \n성격은 화끈하고 날라다닙니당~! \n열심히 잘 먹고 잘 클 자신은 있답니당 \n방실방실!"
+        introductionLabel.text = detailData?.introduction
         introductionLabel.textAlignment = .center
         introductionLabel.numberOfLines = 0
         introductionLabel.font = .systemFont(ofSize: 14)
@@ -128,7 +130,11 @@ class DetailTamagotchiViewController: UIViewController {
         buttonStackView.distribution = .fillEqually
         buttonStackView.backgroundColor = .systemGray4
         
-        cancelButton.backgroundColor = .systemGray6
-        startButton.backgroundColor = .systemGray6
+        cancelButton.setDetailUI(datilBackgroundColor: .systemGray6, buttonTitle: "취소", buttonTitleColor: .black)
+        startButton.setDetailUI(datilBackgroundColor: .systemGray6, buttonTitle: "시작하기", buttonTitleColor: .black)
+    }
+    
+    func configureData() {
+        
     }
 }

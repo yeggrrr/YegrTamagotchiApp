@@ -59,13 +59,13 @@ class SelectTamagochiTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-        cellBackgroundView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        cellBackgroundView.backgroundColor = UIColor.primaryBackgroundColor()
         
         tamagotchiImageView.layer.cornerRadius = 50
         
         tamagotchiNameLabelView.backgroundColor = .clear
         tamagotchiNameLabelView.layer.borderWidth = 1
-        tamagotchiNameLabelView.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
+        tamagotchiNameLabelView.layer.borderColor = UIColor.fontBorderColor().cgColor
         
         tamagotchiNameLabel.textColor = .label
         tamagotchiNameLabel.font = .systemFont(ofSize: 14)

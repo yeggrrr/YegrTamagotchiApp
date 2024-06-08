@@ -22,11 +22,11 @@ class SelectTamagochiViewController: UIViewController {
     func configureNavigation() {
         navigationItem.title = "다마고치 선택하기"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Copperplate", size: 20) ?? UIFont()]
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        self.navigationController?.navigationBar.backgroundColor = UIColor.primaryBackgroundColor()
     }
     
     func selectTamagotchiViewUI() {
-        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        view.backgroundColor = UIColor.primaryBackgroundColor()
         view.addSubview(selectTamagotchiView)
         selectTamagotchiView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
@@ -59,7 +59,9 @@ extension SelectTamagochiViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailData = TamagotchiData.selecttamagotchi[indexPath.row]
         let detailVC = DetailTamagotchiViewController()
+        detailVC.detailData = detailData
         present(detailVC, animated: true)
     }
 }
