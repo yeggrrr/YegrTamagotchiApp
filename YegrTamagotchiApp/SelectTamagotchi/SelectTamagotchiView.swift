@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SelectTamagotchiView: UIView {
     let selectTamagotchiTableView = UITableView()
@@ -16,7 +17,6 @@ class SelectTamagotchiView: UIView {
         configureHierarchy()
         configureLayout()
         configureUI()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -44,5 +44,3 @@ class SelectTamagotchiView: UIView {
         
     }
 }
-
-

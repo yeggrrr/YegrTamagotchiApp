@@ -39,6 +39,7 @@ class DetailTamagotchiViewController: UIViewController {
         popUpView.addSubview(tamagotchiImageView)
         popUpView.addSubview(tamagotchiNameView)
         tamagotchiNameView.addSubview(tamagotchiNameLabel)
+        
         popUpView.addSubview(devideLineView)
         
         popUpView.addSubview(introductionLabel)
@@ -93,26 +94,26 @@ class DetailTamagotchiViewController: UIViewController {
         }
         
         cancelButton.snp.makeConstraints {
-            $0.height.equalTo(buttonStackView)
+            $0.top.equalTo(buttonStackView).offset(1)
             $0.width.equalTo(buttonStackView.frame.width / 2)
         }
         
         startButton.snp.makeConstraints {
-            $0.height.equalTo(buttonStackView)
+            $0.top.equalTo(buttonStackView).offset(1)
             $0.width.equalTo(buttonStackView.frame.width / 2)
         }
     }
     
     func configureUI() {
-        popUpView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        popUpView.backgroundColor = UIColor.primaryBackgroundColor()
         popUpView.layer.cornerRadius = 10
         
-        tamagotchiImageView.layer.cornerRadius = 60
         guard let image = detailData?.image else { return }
+        tamagotchiImageView.layer.cornerRadius = 60
         tamagotchiImageView.image = UIImage(named: image)
         
         tamagotchiNameView.layer.borderWidth = 1
-        tamagotchiNameView.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
+        tamagotchiNameView.layer.borderColor = UIColor.fontBorderColor().cgColor
         
         tamagotchiNameLabel.text = detailData?.name
         tamagotchiNameLabel.font = .systemFont(ofSize: 14)
@@ -130,11 +131,7 @@ class DetailTamagotchiViewController: UIViewController {
         buttonStackView.distribution = .fillEqually
         buttonStackView.backgroundColor = .systemGray4
         
-        cancelButton.setDetailUI(datilBackgroundColor: .systemGray6, buttonTitle: "취소", buttonTitleColor: .black)
-        startButton.setDetailUI(datilBackgroundColor: .systemGray6, buttonTitle: "시작하기", buttonTitleColor: .black)
-    }
-    
-    func configureData() {
-        
+        cancelButton.setDetailUI(datilBackgroundColor: UIColor.primaryBackgroundColor(), buttonTitle: "취소", buttonTitleColor: .black)
+        startButton.setDetailUI(datilBackgroundColor: UIColor.primaryBackgroundColor(), buttonTitle: "시작하기", buttonTitleColor: .black)
     }
 }
