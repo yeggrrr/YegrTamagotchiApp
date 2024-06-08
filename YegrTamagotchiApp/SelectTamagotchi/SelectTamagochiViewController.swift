@@ -42,7 +42,7 @@ class SelectTamagochiViewController: UIViewController {
 
 extension SelectTamagochiViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        170
+        150
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,5 +56,10 @@ extension SelectTamagochiViewController: UITableViewDelegate, UITableViewDataSou
         cell.tamagotchiNameLabel.text = TamagotchiData.selecttamagotchi[indexPath.row].name
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailTamagotchiViewController()
+        present(detailVC, animated: true)
     }
 }

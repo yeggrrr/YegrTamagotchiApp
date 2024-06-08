@@ -42,7 +42,7 @@ class SelectTamagochiTableViewCell: UITableViewCell {
         tamagotchiImageView.snp.makeConstraints {
             $0.top.equalTo(cellBackgroundView.snp.top).offset(10)
             $0.centerX.equalTo(cellBackgroundView.snp.centerX)
-            $0.height.width.equalTo(120)
+            $0.height.width.equalTo(100)
         }
         
         tamagotchiNameLabelView.snp.makeConstraints {
@@ -61,7 +61,7 @@ class SelectTamagochiTableViewCell: UITableViewCell {
     func configureUI() {
         cellBackgroundView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
-        tamagotchiImageView.layer.cornerRadius = 60
+        tamagotchiImageView.layer.cornerRadius = 50
         
         tamagotchiNameLabelView.backgroundColor = .clear
         tamagotchiNameLabelView.layer.borderWidth = 1
