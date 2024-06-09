@@ -147,8 +147,8 @@ class DetailViewController: UIViewController {
     
     @objc func startButtonClicked() {
         if detailData?.info.name == .preparing {
-            let alert = UIAlertController(title: "df", message: nil, preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "dfs", style: .default)
+            let alert = UIAlertController(title: "준비중에요!\n조금만 기다려주세요~^0^", message: nil, preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "확인", style: .default)
             alert.addAction(okButton)
             present(alert, animated: true)
         } else {
