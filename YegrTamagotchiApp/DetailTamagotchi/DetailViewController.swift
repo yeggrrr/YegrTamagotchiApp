@@ -108,6 +108,7 @@ class DetailViewController: UIViewController {
     func configureUI() {
         popUpView.backgroundColor = .primaryBackgroundColor
         popUpView.layer.cornerRadius = 10
+        popUpView.clipsToBounds = true
         
         guard let imageName = detailData?.thumbnailImageName else { return }
         tamagotchiImageView.layer.cornerRadius = 60
