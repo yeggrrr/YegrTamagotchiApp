@@ -10,7 +10,10 @@ import SnapKit
 
 class MainViewController: UIViewController {
     let mainView = MainView()
+    let nickname = UserInfo.nickname
+    
     var mainData: RaisingTamagotchi?
+    var index: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +33,12 @@ class MainViewController: UIViewController {
             $0.edges.equalTo(safeArea)
         }
         
-        let nickname = UserInfo.nickname
         mainView.storyLabel.text = "\(nickname)님! 반가워요!"
     }
 
     func configureNavigation() {
         navigationController?.navigationBar.barTintColor = .primaryBackgroundColor
-        navigationController?.navigationBar.topItem?.title = "Yegr님의 다마고치"
+        navigationController?.navigationBar.topItem?.title = "\(nickname)님의 다마고치"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.fontBorderColor]
         
         let rightSettingButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
@@ -73,11 +75,41 @@ class MainViewController: UIViewController {
     }
     
     @objc func feedButtonClicked() {
+        guard let text = mainView.feedTextField.text else { return }
+        guard let StringToIntText = Int(text) else { return }
+        guard let index else { return }
+        let oldData = TamagotchiData.raisingTamagotchi[index]
+        let newFeedCount = oldData.feedCount + StringToIntText
+        let newData = RaisingTamagotchi(
+            info: oldData.info,
+            level: oldData.level,
+            feedCount: newFeedCount,
+            waterDropCount: oldData.waterDropCount)
+        
+        TamagotchiData.raisingTamagotchi[index] = newData
+        mainData = TamagotchiData.raisingTamagotchi[index]
         setRandomStory()
+        setData()
+        mainView.feedTextField.text = ""
     }
     
     @objc func waterButtonClicked() {
+        guard let text = mainView.waterTextField.text else { return }
+        guard let StringToIntText = Int(text) else { return }
+        guard let index else { return }
+        let oldData = TamagotchiData.raisingTamagotchi[index]
+        let newWatercount = oldData.waterDropCount + StringToIntText
+        let newData = RaisingTamagotchi(
+            info: oldData.info,
+            level: oldData.level,
+            feedCount: oldData.feedCount,
+            waterDropCount: newWatercount)
+        
+        TamagotchiData.raisingTamagotchi[index] = newData
+        mainData = TamagotchiData.raisingTamagotchi[index]
         setRandomStory()
+        setData()
+        mainView.waterTextField.text = ""
     }
     
     @objc func settingButtonClicked() {

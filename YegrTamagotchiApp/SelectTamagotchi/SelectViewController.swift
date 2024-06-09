@@ -53,7 +53,6 @@ extension SelectViewController: UITableViewDelegate, UITableViewDataSource {
                 SelectTableViewCell else { return UITableViewCell() }
         cell.tamagotchiImageView.image = UIImage(named: TamagotchiData.raisingTamagotchi[indexPath.row].info.image.rawValue)
         cell.tamagotchiNameLabel.text = TamagotchiData.raisingTamagotchi[indexPath.row].info.name.rawValue
-        
         return cell
     }
     
@@ -61,6 +60,8 @@ extension SelectViewController: UITableViewDelegate, UITableViewDataSource {
         let detailData = TamagotchiData.raisingTamagotchi[indexPath.row]
         let detailVC = DetailViewController()
         detailVC.detailData = detailData
-        present(detailVC, animated: true)
+        detailVC.index = indexPath.row
+        detailVC.modalPresentationStyle = .overCurrentContext
+        present(detailVC, animated: false)
     }
 }

@@ -36,9 +36,9 @@ struct TamagotchiInfo {
 
 struct RaisingTamagotchi {
     let info: TamagotchiInfo
-    let level: Int = 1
-    let feedCount: Int = 0
-    let waterDropCount: Int = 0
+    var level: Int = 1
+    var feedCount: Int = 0
+    var waterDropCount: Int = 0
 }
 
 struct UserInfo {
@@ -73,8 +73,8 @@ extension TamagotchiData {
         introduction: .preparing)
     
     // RaisingTamagotchi Model Data
-    static let cactusRasingData = RaisingTamagotchi(info: cactusSelectData)
-    static let sunRasingData = RaisingTamagotchi(info: sunSelectData)
-    static let starRasingData = RaisingTamagotchi(info: starSelectData)
-    static let preparingRasingData = RaisingTamagotchi(info: preparingSelectData)
+    static var cactusRasingData = RaisingTamagotchi(info: cactusSelectData)
+    static var sunRasingData = RaisingTamagotchi(info: sunSelectData)
+    static var starRasingData = RaisingTamagotchi(info: starSelectData)
+    static var preparingRasingData = RaisingTamagotchi(info: preparingSelectData)
 }

@@ -24,11 +24,12 @@ class DetailViewController: UIViewController {
     let startButton = UIButton(type: .system)
     
     var detailData: RaisingTamagotchi?
+    var index: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .clear
+        view.backgroundColor = .black.withAlphaComponent(0.3)
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -141,14 +142,22 @@ class DetailViewController: UIViewController {
     }
     
     @objc func cancelButtonClicked() {
-        dismiss(animated: true)
+        dismiss(animated: false)
     }
     
     @objc func startButtonClicked() {
-        let mainVC = MainViewController()
-        mainVC.mainData = detailData
-        let mainNav = UINavigationController(rootViewController: mainVC)
-        mainNav.modalPresentationStyle = .fullScreen
-        present(mainNav, animated: true)
+        if detailData?.info.name == .preparing {
+            let alert = UIAlertController(title: "df", message: nil, preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "dfs", style: .default)
+            alert.addAction(okButton)
+            present(alert, animated: true)
+        } else {
+            let mainVC = MainViewController()
+            mainVC.mainData = detailData
+            mainVC.index = index
+            let mainNav = UINavigationController(rootViewController: mainVC)
+            mainNav.modalPresentationStyle = .fullScreen
+            present(mainNav, animated: true)
+        }
     }
 }
