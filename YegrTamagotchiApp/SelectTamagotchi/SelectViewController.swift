@@ -51,8 +51,10 @@ extension SelectViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectTableViewCell.id, for: indexPath) as?
                 SelectTableViewCell else { return UITableViewCell() }
-        cell.tamagotchiImageView.image = UIImage(named: TamagotchiData.raisingTamagotchi[indexPath.row].info.image.rawValue)
-        cell.tamagotchiNameLabel.text = TamagotchiData.raisingTamagotchi[indexPath.row].info.name.rawValue
+        
+        let item = TamagotchiData.raisingTamagotchi[indexPath.row]
+        cell.tamagotchiImageView.image = UIImage(named: item.thumbnailImageName)
+        cell.tamagotchiNameLabel.text = item.info.name.rawValue
         return cell
     }
     

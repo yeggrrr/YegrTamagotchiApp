@@ -109,9 +109,9 @@ class DetailViewController: UIViewController {
         popUpView.backgroundColor = .primaryBackgroundColor
         popUpView.layer.cornerRadius = 10
         
-        guard let image = detailData?.info.image else { return }
+        guard let imageName = detailData?.thumbnailImageName else { return }
         tamagotchiImageView.layer.cornerRadius = 60
-        tamagotchiImageView.image = UIImage(named: image.rawValue)
+        tamagotchiImageView.image = UIImage(named: imageName)
         
         tamagotchiNameView.layer.borderWidth = 1
         tamagotchiNameView.layer.borderColor = UIColor.fontBorderColor.cgColor

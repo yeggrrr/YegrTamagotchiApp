@@ -68,12 +68,13 @@ class MainView: UIView {
         let safeArea = safeAreaLayoutGuide
         storyImageView.snp.makeConstraints {
             $0.top.equalTo(safeArea).offset(40)
-            $0.horizontalEdges.equalTo(safeArea).inset(80)
+            $0.horizontalEdges.equalTo(safeArea).inset(60)
             $0.height.equalTo(150)
         }
         
         storyLabel.snp.makeConstraints {
             $0.centerX.equalTo(storyImageView.snp.centerX)
+            $0.horizontalEdges.equalTo(storyImageView)
             $0.centerY.equalTo(storyImageView.snp.top).offset(70)
         }
         
