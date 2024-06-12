@@ -170,9 +170,8 @@ class MainView: UIView {
         waterTextField.setMainTextField(placeholderText: "물주세용")
         
         feedButton.setMainUI(imageSystemName: "drop.circle", buttonTitle: " 밥먹기")
-        feedTFUnderLineView.backgroundColor = .fontBorderColor
-        
         waterButton.setMainUI(imageSystemName: "leaf.circle", buttonTitle: " 물먹기")
+        feedTFUnderLineView.backgroundColor = .fontBorderColor
         waterTFUnderLineView.backgroundColor = .fontBorderColor
     }
 }

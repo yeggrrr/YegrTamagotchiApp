@@ -1,32 +1,36 @@
 //
-//  SelectTamagochiTableViewCell.swift
+//  SelectCollectionViewCell.swift
 //  YegrTamagotchiApp
 //
-//  Created by YJ on 6/8/24.
+//  Created by YJ on 6/12/24.
 //
 
 import UIKit
-import SnapKit
 
-class SelectTableViewCell: UITableViewCell {
+class SelectCollectionViewCell: UICollectionViewCell {
     let cellBackgroundView = UIView()
     let tamagotchiImageView = UIImageView()
     let tamagotchiNameLabelView = UIView()
     let tamagotchiNameLabel = UILabel()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        configurHierarchy()
+        configureHierarchy()
+        configureLayout()
+        configureUI()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        configureHierarchy()
         configureLayout()
         configureUI()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configurHierarchy() {
+    func configureHierarchy() {
         contentView.addSubview(cellBackgroundView)
         cellBackgroundView.addSubview(tamagotchiImageView)
         cellBackgroundView.addSubview(tamagotchiNameLabelView)
@@ -41,9 +45,9 @@ class SelectTableViewCell: UITableViewCell {
         }
         
         tamagotchiImageView.snp.makeConstraints {
-            $0.top.equalTo(cellBackgroundView.snp.top).offset(10)
+            $0.top.equalTo(cellBackgroundView.snp.top).offset(5)
             $0.centerX.equalTo(cellBackgroundView.snp.centerX)
-            $0.height.width.equalTo(100)
+            $0.height.width.equalTo(80)
         }
         
         tamagotchiNameLabelView.snp.makeConstraints {

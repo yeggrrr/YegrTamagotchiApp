@@ -16,10 +16,7 @@
 		689BAD892C1309E000BCD61F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 689BAD882C1309E000BCD61F /* SnapKit */; };
 		689BAD8C2C1309ED00BCD61F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 689BAD8B2C1309ED00BCD61F /* Alamofire */; };
 		689BAD8F2C1309F500BCD61F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 689BAD8E2C1309F500BCD61F /* Kingfisher */; };
-		689BAD912C130A8D00BCD61F /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD902C130A8D00BCD61F /* SelectViewController.swift */; };
 		689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */; };
-		689BAD972C1429FF00BCD61F /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD962C1429FF00BCD61F /* SelectTableViewCell.swift */; };
-		689BAD992C142A6400BCD61F /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD982C142A6400BCD61F /* SelectView.swift */; };
 		689BAD9B2C143E2300BCD61F /* TamagotchiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */; };
 		689BADA52C14627200BCD61F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADA42C14627200BCD61F /* DetailViewController.swift */; };
 		689BADA72C14803D00BCD61F /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADA62C14803D00BCD61F /* UIButton+.swift */; };
@@ -29,6 +26,8 @@
 		689BADB32C14A91B00BCD61F /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADB22C14A91B00BCD61F /* UILabel+.swift */; };
 		689BADB52C14AA8200BCD61F /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADB42C14AA8200BCD61F /* UIStackView+.swift */; };
 		689BADB72C14AAF100BCD61F /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BADB62C14AAF100BCD61F /* UITextField+.swift */; };
+		68F162262C199F540059FA66 /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F162252C199F540059FA66 /* SelectCollectionViewController.swift */; };
+		68F162282C199F710059FA66 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F162272C199F710059FA66 /* SelectCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +39,7 @@
 		689BAD7D2C1308BF00BCD61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689BAD832C13098A00BCD61F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		689BAD852C1309B000BCD61F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		689BAD902C130A8D00BCD61F /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		689BAD942C130AF500BCD61F /* ResuableProtocol+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResuableProtocol+.swift"; sourceTree = "<group>"; };
-		689BAD962C1429FF00BCD61F /* SelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
-		689BAD982C142A6400BCD61F /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 		689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiData.swift; sourceTree = "<group>"; };
 		689BADA42C14627200BCD61F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		689BADA62C14803D00BCD61F /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -53,6 +49,8 @@
 		689BADB22C14A91B00BCD61F /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		689BADB42C14AA8200BCD61F /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		689BADB62C14AAF100BCD61F /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		68F162252C199F540059FA66 /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
+		68F162272C199F710059FA66 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +105,8 @@
 		689BAD922C130AAF00BCD61F /* SelectTamagotchi */ = {
 			isa = PBXGroup;
 			children = (
-				689BAD962C1429FF00BCD61F /* SelectTableViewCell.swift */,
-				689BAD982C142A6400BCD61F /* SelectView.swift */,
-				689BAD902C130A8D00BCD61F /* SelectViewController.swift */,
+				68F162272C199F710059FA66 /* SelectCollectionViewCell.swift */,
+				68F162252C199F540059FA66 /* SelectCollectionViewController.swift */,
 			);
 			path = SelectTamagotchi;
 			sourceTree = "<group>";
@@ -233,12 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				689BAD992C142A6400BCD61F /* SelectView.swift in Sources */,
+				68F162262C199F540059FA66 /* SelectCollectionViewController.swift in Sources */,
 				689BADAE2C148B3F00BCD61F /* MainView.swift in Sources */,
-				689BAD912C130A8D00BCD61F /* SelectViewController.swift in Sources */,
 				689BAD9B2C143E2300BCD61F /* TamagotchiData.swift in Sources */,
 				689BADB32C14A91B00BCD61F /* UILabel+.swift in Sources */,
-				689BAD972C1429FF00BCD61F /* SelectTableViewCell.swift in Sources */,
 				689BADA92C14816300BCD61F /* UIColor+.swift in Sources */,
 				689BADA52C14627200BCD61F /* DetailViewController.swift in Sources */,
 				689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */,
@@ -246,6 +241,7 @@
 				689BADB52C14AA8200BCD61F /* UIStackView+.swift in Sources */,
 				689BAD862C1309B000BCD61F /* APIKey.swift in Sources */,
 				689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */,
+				68F162282C199F710059FA66 /* SelectCollectionViewCell.swift in Sources */,
 				689BADAC2C14875600BCD61F /* MainViewController.swift in Sources */,
 				689BADA72C14803D00BCD61F /* UIButton+.swift in Sources */,
 				689BADB72C14AAF100BCD61F /* UITextField+.swift in Sources */,
