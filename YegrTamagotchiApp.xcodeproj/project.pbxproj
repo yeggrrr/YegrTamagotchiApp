@@ -91,9 +91,9 @@
 				689BAD712C1308BE00BCD61F /* SceneDelegate.swift */,
 				689BAD782C1308BF00BCD61F /* Assets.xcassets */,
 				689BAD7A2C1308BF00BCD61F /* LaunchScreen.storyboard */,
-				689BAD922C130AAF00BCD61F /* SelectTamagotchi */,
-				689BADA32C14623B00BCD61F /* DetailTamagotchi */,
-				689BADAA2C14871F00BCD61F /* MainTamagotchi */,
+				689BAD922C130AAF00BCD61F /* SelectVC */,
+				689BADA32C14623B00BCD61F /* DetailVC */,
+				689BADAA2C14871F00BCD61F /* MainVC */,
 				689BADAF2C14995300BCD61F /* Model */,
 				689BAD932C130AD500BCD61F /* Extension */,
 				689BAD7D2C1308BF00BCD61F /* Info.plist */,
@@ -102,13 +102,13 @@
 			path = YegrTamagotchiApp;
 			sourceTree = "<group>";
 		};
-		689BAD922C130AAF00BCD61F /* SelectTamagotchi */ = {
+		689BAD922C130AAF00BCD61F /* SelectVC */ = {
 			isa = PBXGroup;
 			children = (
 				68F162272C199F710059FA66 /* SelectCollectionViewCell.swift */,
 				68F162252C199F540059FA66 /* SelectCollectionViewController.swift */,
 			);
-			path = SelectTamagotchi;
+			path = SelectVC;
 			sourceTree = "<group>";
 		};
 		689BAD932C130AD500BCD61F /* Extension */ = {
@@ -124,21 +124,21 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		689BADA32C14623B00BCD61F /* DetailTamagotchi */ = {
+		689BADA32C14623B00BCD61F /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
 				689BADA42C14627200BCD61F /* DetailViewController.swift */,
 			);
-			path = DetailTamagotchi;
+			path = DetailVC;
 			sourceTree = "<group>";
 		};
-		689BADAA2C14871F00BCD61F /* MainTamagotchi */ = {
+		689BADAA2C14871F00BCD61F /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
 				689BADAD2C148B3F00BCD61F /* MainView.swift */,
 				689BADAB2C14875600BCD61F /* MainViewController.swift */,
 			);
-			path = MainTamagotchi;
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 		689BADAF2C14995300BCD61F /* Model */ = {

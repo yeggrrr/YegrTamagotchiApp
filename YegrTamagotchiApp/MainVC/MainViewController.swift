@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
         configureNavigation()
         setData()
         setButtonAction()
+        textFieldUI()
     }
     
     func configureUI() {
@@ -49,6 +50,11 @@ class MainViewController: UIViewController {
         let rightSettingButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         navigationController?.navigationBar.topItem?.rightBarButtonItem = rightSettingButton
         navigationController?.navigationBar.topItem?.rightBarButtonItem?.tintColor = .fontBorderColor
+    }
+    
+    func textFieldUI() {
+        mainView.feedTextField.delegate = self
+        mainView.waterTextField.delegate = self
     }
     
     func setRandomStory() {
@@ -93,6 +99,13 @@ class MainViewController: UIViewController {
         }
     }
     
+    func showAlert(title: String, subtitle: String) {
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okButton)
+        present(alert, animated: true)
+    }
+    
     func give(food: Food) {
         guard let index else { return }
         let oldData = TamagotchiData.raisingTamagotchi[index]
@@ -101,20 +114,46 @@ class MainViewController: UIViewController {
         switch food {
         case .bob:
             guard let text = mainView.feedTextField.text else { return }
-            guard let StringToIntText = Int(text) else { return }
-            let newFeedCount = oldData.feedCount + StringToIntText
-            newData = RaisingTamagotchi(
-                info: oldData.info,
-                feedCount: newFeedCount,
-                waterDropCount: oldData.waterDropCount)
+            if text.isEmpty {
+                let newFeedCount = oldData.feedCount + 1
+                newData = RaisingTamagotchi(
+                    info: oldData.info,
+                    feedCount: newFeedCount,
+                    waterDropCount: oldData.waterDropCount)
+            } else {
+                guard let stringToIntText = Int(text) else { return }
+                guard stringToIntText < 100 else {
+                    showAlert(title: "너무 많아요!ㅠㅡㅠ", subtitle: "한 번에 먹일 수 있는 밥은\n'99개'까지 입니다ㅎㅎ" )
+                    return
+                }
+                
+                let newFeedCount = oldData.feedCount + stringToIntText
+                newData = RaisingTamagotchi(
+                    info: oldData.info,
+                    feedCount: newFeedCount,
+                    waterDropCount: oldData.waterDropCount)
+            }
+
         case .water:
             guard let text = mainView.waterTextField.text else { return }
-            guard let StringToIntText = Int(text) else { return }
-            let newWatercount = oldData.waterDropCount + StringToIntText
-            newData = RaisingTamagotchi(
-                info: oldData.info,
-                feedCount: oldData.feedCount,
-                waterDropCount: newWatercount)
+            if text.isEmpty {
+                let newWatercount = oldData.waterDropCount + 1
+                newData = RaisingTamagotchi(
+                    info: oldData.info,
+                    feedCount: oldData.feedCount,
+                    waterDropCount: newWatercount)
+            } else {
+                guard let stringToIntText = Int(text) else { return }
+                guard stringToIntText < 50 else {
+                    showAlert(title: "너무 많아요!ㅠㅡㅠ", subtitle: "한 번에 먹일 수 있는 물은\n'49방울'까지 입니다ㅎㅎ")
+                    return
+                }
+                let newWatercount = oldData.waterDropCount + stringToIntText
+                newData = RaisingTamagotchi(
+                    info: oldData.info,
+                    feedCount: oldData.feedCount,
+                    waterDropCount: newWatercount)
+            }
         }
         
         TamagotchiData.raisingTamagotchi[index] = newData
@@ -134,5 +173,13 @@ class MainViewController: UIViewController {
     
     @objc func settingButtonClicked() {
         print(#function)
+    }
+}
+
+extension MainViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = mainView.feedTextField.text else { return true }
+        let textLength = text.count + string.count - range.length
+        return textLength <= 3
     }
 }
