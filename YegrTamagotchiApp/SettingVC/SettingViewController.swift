@@ -49,7 +49,7 @@ class SettingViewController: UIViewController {
     
     func configurUI() {
         // view
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.primaryBackgroundColor
         
         //navigaion
         navigationItem.title = "설정"
@@ -68,6 +68,7 @@ class SettingViewController: UIViewController {
     func configureTableView() {
         settingTableView.delegate = self
         settingTableView.dataSource = self
+        settingTableView.backgroundColor = UIColor.primaryBackgroundColor
     }
 }
 
@@ -82,6 +83,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        cell.selectionStyle = .none
+        cell.backgroundColor = UIColor.primaryBackgroundColor
         cell.accessoryType = .disclosureIndicator
         cell.imageView?.image = UIImage(systemName: Setting.allCases[indexPath.row].optionImage)
         cell.imageView?.tintColor = .darkGray
@@ -90,11 +93,22 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row != 0 {
             cell.detailTextLabel?.isHidden = true
         }
-        cell.detailTextLabel?.text = "푸바오" // 예시
+        cell.detailTextLabel?.text = "푸바오"
         cell.detailTextLabel?.font = .systemFont(ofSize: 13)
-        cell.selectionStyle = .none
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        switch index {
+        case 0:
+            navigationController?.pushViewController(UserNameSettingViewController(), animated: true)
+        case 1:
+            print("다마고치 변경 화면으로 이동")
+        case 2:
+            print("데이터 초기화 alert")
+        default:
+            print("-")
+        }
+    }
 }
