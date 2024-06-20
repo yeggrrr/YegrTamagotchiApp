@@ -29,7 +29,6 @@
 		68F162262C199F540059FA66 /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F162252C199F540059FA66 /* SelectCollectionViewController.swift */; };
 		68F162282C199F710059FA66 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F162272C199F710059FA66 /* SelectCollectionViewCell.swift */; };
 		68F162742C1AADC60059FA66 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F162732C1AADC60059FA66 /* SettingViewController.swift */; };
-		68F162762C1AAFD20059FA66 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F162752C1AAFD20059FA66 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +53,6 @@
 		68F162252C199F540059FA66 /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
 		68F162272C199F710059FA66 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		68F162732C1AADC60059FA66 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		68F162752C1AAFD20059FA66 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				68F162732C1AADC60059FA66 /* SettingViewController.swift */,
-				68F162752C1AAFD20059FA66 /* SettingTableViewCell.swift */,
 			);
 			path = SettingVC;
 			sourceTree = "<group>";
@@ -254,7 +251,6 @@
 				689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */,
 				689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */,
 				689BADB52C14AA8200BCD61F /* UIStackView+.swift in Sources */,
-				68F162762C1AAFD20059FA66 /* SettingTableViewCell.swift in Sources */,
 				689BAD862C1309B000BCD61F /* APIKey.swift in Sources */,
 				689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */,
 				68F162282C199F710059FA66 /* SelectCollectionViewCell.swift in Sources */,

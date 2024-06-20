@@ -39,7 +39,6 @@ class SettingViewController: UIViewController {
     func configureTableView() {
         settingTableView.delegate = self
         settingTableView.dataSource = self
-        settingTableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.id) // 여기서 style 설정
     }
 }
 
@@ -53,7 +52,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.id, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        cell.accessoryType = .disclosureIndicator
+        cell.imageView?.image = UIImage(systemName: "star")
+        cell.textLabel?.text = "ddd"
+        cell.detailTextLabel?.text = "sss"
         cell.selectionStyle = .none
         return cell
     }
