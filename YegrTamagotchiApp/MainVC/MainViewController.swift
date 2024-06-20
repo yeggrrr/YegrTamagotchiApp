@@ -43,6 +43,8 @@ class MainViewController: UIViewController {
     }
 
     func configureNavigation() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
         navigationController?.navigationBar.barTintColor = .primaryBackgroundColor
         navigationController?.navigationBar.topItem?.title = "\(nickname)님의 다마고치"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.fontBorderColor]
@@ -172,7 +174,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func settingButtonClicked() {
-        print(#function)
+        navigationController?.pushViewController(SettingViewController(), animated: true)
     }
 }
 
