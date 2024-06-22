@@ -54,6 +54,8 @@ class UserNameSettingViewController: UIViewController {
     }
     
     @objc func saveButtonClicked() {
-        print(#function)
+        guard let text = textField.text else { return }
+        UserDefaults.standard.setValue(text, forKey: UserDefaultsInfo.nickname.rawValue)
+        navigationController?.popViewController(animated: true)
     }
 }

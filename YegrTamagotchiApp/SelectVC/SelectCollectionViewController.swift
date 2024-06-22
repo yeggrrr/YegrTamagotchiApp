@@ -59,7 +59,7 @@ extension SelectCollectionViewController: UICollectionViewDelegate, UICollection
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectCollectionViewCell.id, for: indexPath) as? SelectCollectionViewCell else { return UICollectionViewCell() }
         let item = TamagotchiData.raisingTamagotchi[indexPath.row]
         cell.tamagotchiImageView.image = UIImage(named: item.thumbnailImageName)
-        cell.tamagotchiNameLabel.text = item.info.name.rawValue
+        cell.tamagotchiNameLabel.text = item.name.rawValue
         return cell
     }
     

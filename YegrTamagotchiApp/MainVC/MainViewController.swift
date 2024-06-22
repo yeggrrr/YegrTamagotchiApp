@@ -15,10 +15,7 @@ class MainViewController: UIViewController {
     }
     
     let mainView = MainView()
-    let nickname = UserInfo.nickname
-    
-    var mainData: RaisingTamagotchi?
-    var index: Int?
+    var detailData: RaisingTamagotchi?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +27,13 @@ class MainViewController: UIViewController {
         textFieldUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureUI()
+        configureNavigation()
+    }
+    
     func configureUI() {
         view.backgroundColor = .primaryBackgroundColor
         view.addSubview(mainView)
@@ -39,14 +43,14 @@ class MainViewController: UIViewController {
             $0.edges.equalTo(safeArea)
         }
         
-        mainView.storyLabel.text = "\(nickname)님! 반가워요!"
+        mainView.storyLabel.text = "\(UserDefaultsData.nickname)님! 반가워요!"
     }
 
     func configureNavigation() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         
         navigationController?.navigationBar.barTintColor = .primaryBackgroundColor
-        navigationController?.navigationBar.topItem?.title = "\(nickname)님의 다마고치"
+        title = "\(UserDefaultsData.nickname)님의 다마고치"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.fontBorderColor]
         
         let rightSettingButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
@@ -60,15 +64,16 @@ class MainViewController: UIViewController {
     }
     
     func setRandomStory() {
-        guard let name = mainData?.info.name.rawValue else { return }
-        let nickname = UserInfo.nickname
+        let nickname = UserDefaultsData.nickname
+        let tamagotchiName = UserDefaultsData.tamagotchiName
+        
         mainView.storyLabel.text = [
             "오늘도 좋은 하루 보내세요!\n\(nickname)님!",
-            "저는 \(name)이에요! 배고파요!",
+            "저는 \(tamagotchiName)이에요! 배고파요!",
             "저..성장하고 싶어요... \(nickname)님...",
             "아사할 거 같아요..\(nickname)님...",
             "\(nickname)님 혹시 T..?",
-            "내 이름은 \(name), 탐정이죠.",
+            "내 이름은 \(tamagotchiName), 탐정이죠.",
             "무럭무럭 자랄 수 있도록 도와주세요!\n\(nickname)님!",
             "\(nickname)님~ 산책하기 좋은 날씨네요!\n카페 공부는 어때요?",
             "\(nickname)님, 잠이 오나요?\n배도 부른데 코딩하면서 소화 좀 시키죠?ㅎㅎ"
@@ -76,15 +81,18 @@ class MainViewController: UIViewController {
     }
     
     func setData() {
-        guard let mainData = mainData else { return }
         updateLevel()
-        mainView.tamagotchiNameLabel.text = mainData.info.name.rawValue
-        mainView.currentStatusLabel.text = "Lv\(mainData.level) ∙ 밥알 \(mainData.feedCount)개 ∙ 물방울 \(mainData.waterDropCount)개 "
+        
+        mainView.tamagotchiNameLabel.text = UserDefaultsData.tamagotchiName
+        
+        let feedCount = UserDefaults.standard.integer(forKey: UserDefaultsInfo.feedCount.rawValue)
+        let waterCount = UserDefaults.standard.integer(forKey: UserDefaultsInfo.waterCount.rawValue)
+        
+        mainView.currentStatusLabel.text = "Lv\(UserDefaultsData.level) ∙ 밥알 \(feedCount)개 ∙ 물방울 \(waterCount)개 "
     }
     
     func updateLevel() {
-        guard let imageName = mainData?.imageName else { return }
-        mainView.tamagotchiImageView.image = UIImage(named: imageName)
+        mainView.tamagotchiImageView.image = UIImage(named: UserDefaultsData.imageName)
     }
     
     func setButtonAction() {
@@ -109,19 +117,12 @@ class MainViewController: UIViewController {
     }
     
     func give(food: Food) {
-        guard let index else { return }
-        let oldData = TamagotchiData.raisingTamagotchi[index]
-        
-        var newData: RaisingTamagotchi
         switch food {
         case .bob:
             guard let text = mainView.feedTextField.text else { return }
             if text.isEmpty {
-                let newFeedCount = oldData.feedCount + 1
-                newData = RaisingTamagotchi(
-                    info: oldData.info,
-                    feedCount: newFeedCount,
-                    waterDropCount: oldData.waterDropCount)
+                let newFeedCount = UserDefaultsData.feedCount + 1
+                UserDefaults.standard.setValue(newFeedCount, forKey: UserDefaultsInfo.feedCount.rawValue)
             } else {
                 guard let stringToIntText = Int(text) else { return }
                 guard stringToIntText < 100 else {
@@ -129,37 +130,27 @@ class MainViewController: UIViewController {
                     return
                 }
                 
-                let newFeedCount = oldData.feedCount + stringToIntText
-                newData = RaisingTamagotchi(
-                    info: oldData.info,
-                    feedCount: newFeedCount,
-                    waterDropCount: oldData.waterDropCount)
+                let newFeedCount = UserDefaultsData.feedCount + stringToIntText
+                print(newFeedCount)
+                UserDefaults.standard.setValue(newFeedCount, forKey: UserDefaultsInfo.feedCount.rawValue)
             }
 
         case .water:
             guard let text = mainView.waterTextField.text else { return }
             if text.isEmpty {
-                let newWatercount = oldData.waterDropCount + 1
-                newData = RaisingTamagotchi(
-                    info: oldData.info,
-                    feedCount: oldData.feedCount,
-                    waterDropCount: newWatercount)
+                let newWaterCount = UserDefaultsData.waterCount + 1
+                UserDefaults.standard.setValue(newWaterCount, forKey: UserDefaultsInfo.waterCount.rawValue)
             } else {
                 guard let stringToIntText = Int(text) else { return }
                 guard stringToIntText < 50 else {
                     showAlert(title: "너무 많아요!ㅠㅡㅠ", subtitle: "한 번에 먹일 수 있는 물은\n'49방울'까지 입니다ㅎㅎ")
                     return
                 }
-                let newWatercount = oldData.waterDropCount + stringToIntText
-                newData = RaisingTamagotchi(
-                    info: oldData.info,
-                    feedCount: oldData.feedCount,
-                    waterDropCount: newWatercount)
+                let newWaterCount = UserDefaultsData.waterCount + stringToIntText
+                UserDefaults.standard.setValue(newWaterCount, forKey: UserDefaultsInfo.waterCount.rawValue)
             }
         }
         
-        TamagotchiData.raisingTamagotchi[index] = newData
-        mainData = TamagotchiData.raisingTamagotchi[index]
         setRandomStory()
         setData()
         clearTextField(food: food)
@@ -174,7 +165,8 @@ class MainViewController: UIViewController {
     }
     
     @objc func settingButtonClicked() {
-        navigationController?.pushViewController(SettingViewController(), animated: true)
+        let vc = SettingViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

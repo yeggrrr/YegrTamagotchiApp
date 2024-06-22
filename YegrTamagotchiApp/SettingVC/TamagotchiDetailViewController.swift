@@ -153,9 +153,8 @@ class TamagotchiDetailViewController: UIViewController {
             alert.addAction(okButton)
             present(alert, animated: true)
         } else {
+            print(TamagotchiData.raisingTamagotchi)
             let mainVC = MainViewController()
-            mainVC.mainData = detailData
-            mainVC.index = index
             let mainNav = UINavigationController(rootViewController: mainVC)
             mainNav.modalPresentationStyle = .fullScreen
             present(mainNav, animated: true)

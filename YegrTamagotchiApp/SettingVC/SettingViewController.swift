@@ -40,11 +40,20 @@ enum Setting: Int, CaseIterable {
 class SettingViewController: UIViewController {
     let settingTableView = UITableView()
     
+    var mainData: RaisingTamagotchi?
+    var index: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configurUI()
         configureTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        settingTableView.reloadData()
     }
     
     func configurUI() {
@@ -53,6 +62,8 @@ class SettingViewController: UIViewController {
         
         //navigaion
         navigationItem.title = "설정"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "설정", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = .black
         
         // tableView
         view.addSubview(settingTableView)
@@ -62,13 +73,33 @@ class SettingViewController: UIViewController {
         }
         
         settingTableView.backgroundColor = .white
-        
     }
     
     func configureTableView() {
         settingTableView.delegate = self
         settingTableView.dataSource = self
         settingTableView.backgroundColor = UIColor.primaryBackgroundColor
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "데이터 초기화", message: "정말 다시 처음부터 시작하실 건가요?", preferredStyle: .alert)
+        let yesButton = UIAlertAction(title: "웅", style: .default) { _ in
+            UserDefaults.standard.setValue(false, forKey: UserDefaultsInfo.isExistUser.rawValue)
+            for key in UserDefaults.standard.dictionaryRepresentation().keys {
+                UserDefaults.standard.removeObject(forKey: key.description)
+            }
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            let sceneDelegate = windowScene?.delegate as? SceneDelegate
+            let vc = SelectCollectionViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            sceneDelegate?.window?.rootViewController = nav
+            sceneDelegate?.window?.makeKeyAndVisible()
+        }
+        
+        let noButton = UIAlertAction(title: "아냐!", style: .cancel)
+        alert.addAction(yesButton)
+        alert.addAction(noButton)
+        present(alert, animated: true)
     }
 }
 
@@ -93,7 +124,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row != 0 {
             cell.detailTextLabel?.isHidden = true
         }
-        cell.detailTextLabel?.text = "푸바오"
+        cell.detailTextLabel?.text = UserDefaultsData.nickname
         cell.detailTextLabel?.font = .systemFont(ofSize: 13)
         return cell
     }
@@ -104,11 +135,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             navigationController?.pushViewController(UserNameSettingViewController(), animated: true)
         case 1:
-            print("다마고치 변경 화면으로 이동")
+            navigationController?.pushViewController(ChangeCollecionViewController(), animated: true)
         case 2:
-            print("데이터 초기화 alert")
+            showAlert()
         default:
-            print("-")
+            break
         }
     }
 }

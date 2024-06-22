@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		686051D62C24970D00D60EA0 /* UserNameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686051D52C24970D00D60EA0 /* UserNameSettingViewController.swift */; };
+		686051D82C26CDBA00D60EA0 /* ChangeCollecionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686051D72C26CDBA00D60EA0 /* ChangeCollecionViewController.swift */; };
+		686051DA2C26CDDF00D60EA0 /* ChangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686051D92C26CDDF00D60EA0 /* ChangeCollectionViewCell.swift */; };
+		686051DC2C26CF0200D60EA0 /* TamagotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686051DB2C26CF0200D60EA0 /* TamagotchiDetailViewController.swift */; };
+		686051DF2C27117A00D60EA0 /* UserDefaultsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686051DE2C27117A00D60EA0 /* UserDefaultsInfo.swift */; };
 		689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD6F2C1308BE00BCD61F /* AppDelegate.swift */; };
 		689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD712C1308BE00BCD61F /* SceneDelegate.swift */; };
 		689BAD792C1308BF00BCD61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 689BAD782C1308BF00BCD61F /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 
 /* Begin PBXFileReference section */
 		686051D52C24970D00D60EA0 /* UserNameSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameSettingViewController.swift; sourceTree = "<group>"; };
+		686051D72C26CDBA00D60EA0 /* ChangeCollecionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCollecionViewController.swift; sourceTree = "<group>"; };
+		686051D92C26CDDF00D60EA0 /* ChangeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCollectionViewCell.swift; sourceTree = "<group>"; };
+		686051DB2C26CF0200D60EA0 /* TamagotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiDetailViewController.swift; sourceTree = "<group>"; };
+		686051DE2C27117A00D60EA0 /* UserDefaultsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsInfo.swift; sourceTree = "<group>"; };
 		689BAD6C2C1308BE00BCD61F /* YegrTamagotchiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YegrTamagotchiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		689BAD6F2C1308BE00BCD61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		689BAD712C1308BE00BCD61F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				689BAD9A2C143E2300BCD61F /* TamagotchiData.swift */,
+				686051DE2C27117A00D60EA0 /* UserDefaultsInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +166,9 @@
 		68F162722C1AAD9E0059FA66 /* SettingVC */ = {
 			isa = PBXGroup;
 			children = (
+				686051DB2C26CF0200D60EA0 /* TamagotchiDetailViewController.swift */,
+				686051D92C26CDDF00D60EA0 /* ChangeCollectionViewCell.swift */,
+				686051D72C26CDBA00D60EA0 /* ChangeCollecionViewController.swift */,
 				68F162732C1AADC60059FA66 /* SettingViewController.swift */,
 				686051D52C24970D00D60EA0 /* UserNameSettingViewController.swift */,
 			);
@@ -246,16 +258,20 @@
 			files = (
 				68F162262C199F540059FA66 /* SelectCollectionViewController.swift in Sources */,
 				689BADAE2C148B3F00BCD61F /* MainView.swift in Sources */,
+				686051DF2C27117A00D60EA0 /* UserDefaultsInfo.swift in Sources */,
 				686051D62C24970D00D60EA0 /* UserNameSettingViewController.swift in Sources */,
 				689BAD9B2C143E2300BCD61F /* TamagotchiData.swift in Sources */,
 				68F162742C1AADC60059FA66 /* SettingViewController.swift in Sources */,
+				686051D82C26CDBA00D60EA0 /* ChangeCollecionViewController.swift in Sources */,
 				689BADB32C14A91B00BCD61F /* UILabel+.swift in Sources */,
 				689BADA92C14816300BCD61F /* UIColor+.swift in Sources */,
 				689BADA52C14627200BCD61F /* DetailViewController.swift in Sources */,
+				686051DA2C26CDDF00D60EA0 /* ChangeCollectionViewCell.swift in Sources */,
 				689BAD952C130AF500BCD61F /* ResuableProtocol+.swift in Sources */,
 				689BAD702C1308BE00BCD61F /* AppDelegate.swift in Sources */,
 				689BADB52C14AA8200BCD61F /* UIStackView+.swift in Sources */,
 				689BAD862C1309B000BCD61F /* APIKey.swift in Sources */,
+				686051DC2C26CF0200D60EA0 /* TamagotchiDetailViewController.swift in Sources */,
 				689BAD722C1308BE00BCD61F /* SceneDelegate.swift in Sources */,
 				68F162282C199F710059FA66 /* SelectCollectionViewCell.swift in Sources */,
 				689BADAC2C14875600BCD61F /* MainViewController.swift in Sources */,
