@@ -64,7 +64,11 @@ extension ChangeCollecionViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailData = TamagotchiData.raisingTamagotchi[indexPath.row]
         let detailVC = TamagotchiDetailViewController()
+        detailVC.detailData = detailData
+        detailVC.index = indexPath.row
+        
         detailVC.modalPresentationStyle = .overCurrentContext
         present(detailVC, animated: false)
     }

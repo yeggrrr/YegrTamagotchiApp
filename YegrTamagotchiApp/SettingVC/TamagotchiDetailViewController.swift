@@ -23,7 +23,7 @@ class TamagotchiDetailViewController: UIViewController {
     let cancelButton = UIButton(type: .system)
     let changeButton = UIButton(type: .system)
     
-    var detailData: RaisingTamagotchi?
+    var detailData: TamagotchiInfo?
     var index: Int?
     
     override func viewDidLoad() {
@@ -117,12 +117,12 @@ class TamagotchiDetailViewController: UIViewController {
         tamagotchiNameView.layer.borderWidth = 1
         tamagotchiNameView.layer.borderColor = UIColor.fontBorderColor.cgColor
         
-        tamagotchiNameLabel.text = detailData?.info.name.rawValue
+        tamagotchiNameLabel.text = detailData?.name.rawValue
         tamagotchiNameLabel.font = .systemFont(ofSize: 14)
         
         dividerView.backgroundColor = .lightGray
         
-        introductionLabel.text = detailData?.info.introduction.rawValue
+        introductionLabel.text = detailData?.introduction.rawValue
         introductionLabel.textAlignment = .center
         introductionLabel.numberOfLines = 0
         introductionLabel.font = .systemFont(ofSize: 14)
@@ -147,13 +147,14 @@ class TamagotchiDetailViewController: UIViewController {
     }
     
     @objc func changeButtonClicked() {
-        if detailData?.info.name == .preparing {
+        guard let detailData = detailData else { return }
+        if detailData.name == .preparing {
             let alert = UIAlertController(title: "준비중에요!\n조금만 기다려주세요~^0^", message: nil, preferredStyle: .alert)
             let okButton = UIAlertAction(title: "확인", style: .default)
             alert.addAction(okButton)
             present(alert, animated: true)
         } else {
-            print(TamagotchiData.raisingTamagotchi)
+            UserDefaults.standard.setValue(detailData.kind.rawValue, forKey: UserDefaultsInfo.kind.rawValue)
             let mainVC = MainViewController()
             let mainNav = UINavigationController(rootViewController: mainVC)
             mainNav.modalPresentationStyle = .fullScreen
