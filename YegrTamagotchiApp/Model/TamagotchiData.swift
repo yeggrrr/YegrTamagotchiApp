@@ -12,6 +12,40 @@ struct TamagotchiInfo {
     let introduction: Introduction
     var kind: Kind
     
+    var level: Int {
+        let feedCount = UserDefaults.standard.integer(forKey: UserDefaultsInfo.feedCount.rawValue)
+        let waterCount = UserDefaults.standard.integer(forKey: UserDefaultsInfo.waterCount.rawValue)
+        
+        let result = ((feedCount / 5) + (waterCount / 2)) / 10
+        if result == 0 { return 1 }
+        if result > 10 { return 10 }
+        return result
+    }
+    
+    var imageName: String {
+        let raw = kind.rawValue
+        
+        if kind == .preparing {
+            return raw
+        }
+        
+        if level >= 10 {
+            return "\(raw)-9"
+        }
+        
+        return "\(raw)-\(level)"
+    }
+    
+    var thumbnailImageName: String {
+        let raw = kind.rawValue
+        
+        if kind == .preparing {
+            return raw
+        }
+        
+        return "\(raw)-6"
+    }
+    
     enum Name: String {
         case cactus = "따끔따끔 다마고치"
         case sun = "방실방실 다마고치"
@@ -40,7 +74,7 @@ struct RaisingTamagotchi {
     var waterDropCount: Int = 0
     
     var level: Int {
-        let result = ((feedCount / 5) + ( waterDropCount / 2)) / 10
+        let result = ((feedCount / 5) + (waterDropCount / 2)) / 10
         if result == 0 { return 1 }
         if result > 10 { return 10 }
         return result
@@ -76,15 +110,15 @@ struct UserInfo {
 }
 
 struct TamagotchiData {
-    static var raisingTamagotchi: [RaisingTamagotchi] = {
-        var arr = [RaisingTamagotchi].init(repeating: preparingRasingData, count: 17)
-        arr.insert(contentsOf: [cactusRasingData, sunRasingData, starRasingData], at: 0)
-        return arr
-    }()
+    static var raisingTamagotchi: [TamagotchiInfo] = {
+        var arr = [TamagotchiInfo].init(repeating: preparingSelectData, count: 17)
+        arr.insert(contentsOf: [cactusSelectData, sunSelectData, starSelectData], at: 0)
+            return arr
+        }()
+    
 }
 
 extension TamagotchiData {
-    // SelectTamagotchi Model Data
     static var cactusSelectData = TamagotchiInfo(
         name: .cactus,
         introduction: .catus,
@@ -101,10 +135,4 @@ extension TamagotchiData {
         name: .preparing,
         introduction: .preparing,
         kind: .preparing)
-    
-    // RaisingTamagotchi Model Data
-    static var cactusRasingData = RaisingTamagotchi(info: cactusSelectData)
-    static var sunRasingData = RaisingTamagotchi(info: sunSelectData)
-    static var starRasingData = RaisingTamagotchi(info: starSelectData)
-    static var preparingRasingData = RaisingTamagotchi(info: preparingSelectData)
 }
